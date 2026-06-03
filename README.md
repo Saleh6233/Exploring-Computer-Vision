@@ -12,7 +12,7 @@ This repository is structured to reflect a rigorous deep learning curriculum. Ch
 
 - [x] **Legacy CNNs** (Classification, Feature Extraction, ResNet, Inception)
 - [ ] **Object Detection** (YOLO, SSD)
-- [ ] **Image Segmentation** (U-Net, Mask R-CNN)
+- [x] **Image Segmentation** (U-Net, Mask R-CNN, Semantic & Instance Segmentation)
 - [ ] **Generative AI** (GANs, VAEs)
 - [ ] **Vision Transformers & Foundation Models** (ViT, SAM)
 
@@ -22,8 +22,10 @@ This repository is structured to reflect a rigorous deep learning curriculum. Ch
 
 ```text
 Computer Vision/
-├── Legacy CNNs/
-│   └── master_cv_fine_tuning_resnet50.ipynb  <-- 🌟 Current Highlight
+├── 01 Legacy CNNs/
+│   └── master_cv_fine_tuning_resnet50.ipynb
+├── 03 Image Segmentation/
+│   └── 1_master_cv_Semantic_and_Instance_Segmentation.ipynb  <-- 🌟 New Highlight
 └── README.md
 ```
 
@@ -31,7 +33,7 @@ Computer Vision/
 
 ### 1. ResNet-50 Transfer Learning & Hybrid LLM Reasoning Pipeline
 
-**Directory:** `Legacy CNNs/`  
+**Directory:** `01 Legacy CNNs/`  
 **Technologies:** PyTorch, Torchvision, DeepSeek API, Matplotlib, PIL
 
 #### Project Overview
@@ -54,12 +56,28 @@ This project explores foundational transfer learning methodologies on a 5-class 
 
 ---
 
+### 2. Semantic & Instance Segmentation Foundations
+
+**Directory:** `03 Image Segmentation/`  
+**Technologies:** PyTorch, OpenCV, Matplotlib
+
+#### Project Overview
+
+An introductory deep dive into pixel-level image understanding, covering both semantic segmentation (classifying every pixel) and instance segmentation (detecting and delineating individual objects).
+
+#### Key Implementations & Core Concepts Covered
+
+- **Architectural Deep Dive:** Exploring pixel-to-pixel mapping frameworks and loss functions specific to localization and segmentation.
+- **Mask Generation:** Working with binary and multi-class masks using OpenCV and PyTorch datasets to prepare spatial targets for training.
+
+---
+
 ## ⚙️ Setup & Requirements
 
 To run the notebooks locally, install the core dependencies:
 
 ```bash
-pip install torch torchvision matplotlib pillow requests python-dotenv
+pip install torch torchvision matplotlib pillow requests python-dotenv opencv-python
 ```
 
 For notebooks utilizing cloud-based reasoning, ensure you add your API credentials to a local `.env` file:
